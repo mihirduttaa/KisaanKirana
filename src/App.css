@@ -17,28 +17,80 @@
   }
   
   .services {
-    background-image: url('C:\Users\ASUS\kisaankirana\public\images\img-2.jpg');
+    background-image: url('../public/images/img-2.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     color: #fff;
-    font-size: 100px;
+    font-size: 4rem;
+  }
+  .crops-main {
+    margin: 2rem 8rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+  .crops-main > input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .crops-main > label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .crops-main > select {
+    margin: 2rem 1rem;
+  }
+  select {
+    width: 26rem;
+    height: 3rem;
+    font-size: 1.3rem;
+  }
+  #submit {
+    width: 20rem;
+    height: 3rem;
+    font-size: 1.4rem;
+  }
+  #suggested-crop {
+    color: dodgerblue;
+    font-style: oblique;
+    font-size: 4rem;
+  }
+  .wiki-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .wiki-main > h1 {
+    font-size: 4rem;
+    color: dodgerblue;
+    flex: 1;
+  }
+  .wiki-main > p {
+    font-size: 2rem;
+    flex: 1;
   }
   
   .products {
-    background-image: url('C:\Users\ASUS\kisaankirana\public\images\img-1.jpg');
-    background-position: center;
-    background-size: fill;
-    background-repeat: no-repeat;
-    color: #fff;
-    font-size: 100px;
-  }
-  
-  .sign-up {
-    background-image: url('C:\Users\ASUS\kisaankirana\public\images\img-8.jpg');
+    background-image: url('../public/images/img-3.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    color: #fff;
+    font-size: 4rem;
+  }
+  .products-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .sign-up {
     color: #fff;
     font-size: 100px;
   }
