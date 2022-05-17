@@ -2,12 +2,11 @@ import React from "react";
 import "../../App.css";
 // import wiki from 'wikijs';
 
-const statesSelect = document.getElementById("states");
-const seasonsSelect = document.getElementById("seasons");
-
 // Used to query data from both selected and use the state and season to find the suggested rop
 function queryData() {
 	const jsonFile = require("../../data/crop_production.json");
+	const statesSelect = document.getElementById("states");
+	const seasonsSelect = document.getElementById("seasons");
 	const selectedState = statesSelect.value;
 	const selectedSeason = seasonsSelect.value;
 
@@ -18,80 +17,21 @@ function queryData() {
 		) {
 			let suggestedCrop = jsonFile[i].Crop;
 			document.getElementById("suggested-crop").innerText = suggestedCrop;
-			displayWiki(suggestedCrop);
+			// displayWiki(suggestedCrop);
 		}
 	}
 }
 
-function initOptions() {
-	let states = [
-		"Andaman and Nicobar Islands",
-		"Andhra Pradesh",
-		"Arunachal Pradesh",
-		"Assam",
-		"Bihar",
-		"Chandigarh",
-		"Chhattisgarh",
-		"Dadra and Nagar Haveli",
-		"Goa",
-		"Gujarat",
-		"Haryana",
-		"Himachal Pradesh",
-		"Jammu and Kashmir ",
-		"Jharkhand",
-		"Karnataka",
-		"Kerala",
-		"Madhya Pradesh",
-		"Maharashtra",
-		"Manipur",
-		"Meghalaya",
-		"Mizoram",
-		"Nagaland",
-		"Odisha",
-		"Puducherry",
-		"Punjab",
-		"Rajasthan",
-		"Sikkim",
-		"Tamil Nadu",
-		"Telangana ",
-		"Tripura",
-		"Uttar Pradesh",
-		"Uttarakhand",
-		"West Bengal",
-	];
-	let seasons = [
-		"Kharif",
-		"Whole Year",
-		"Autumn",
-		"Rabi",
-		"Summer",
-		"Winter",
-	];
+// function displayWiki(crop) {
+// 	document.getElementById('wiki-h1').innerText = crop;
 
-	// Loop for inserting states options
-	for (let i = 0; i < states.length; i++) {
-		let stateOption = new Option(states[i], states[i]);
-		statesSelect.appendChild(stateOption);
-	}
-
-	// Loop for inserting seasons options
-	for (let i = 0; i < seasons.length; i++) {
-		let seasonOption = new Option(seasons[i], seasons[i]);
-		seasonsSelect.appendChild(seasonOption);
-	}
-}
-
-function displayWiki(crop) {
-	document.getElementById('wiki-h1').innerText = crop;
-
-	// wiki()
-	// 	.page(crop)
-	// 	.then(page => page.info('definition'))
-	// 	.then(document.getElementById('wiki-p').innerText)
-}
+// 	// wiki()
+// 	// 	.page(crop)
+// 	// 	.then(page => page.info('definition'))
+// 	// 	.then(document.getElementById('wiki-p').innerText)
+// }
 
 export default function Services() {
-	initOptions();
 	return (
 		<>
 			<div className="services">
@@ -103,14 +43,58 @@ export default function Services() {
 					crop!
 				</p>
 				<select name="states" id="states">
+					<option value="Andaman and Nicobar Islands">
+						Andaman and Nicobar Islands
+					</option>
+					<option value="Andhra Pradesh">Andhra Pradesh</option>
+					<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+					<option value="Assam">Assam</option>
+					<option value="Bihar">Bihar</option>
+					<option value="Chandigarh">Chandigarh</option>
+					<option value="Chattisgarh">Chattisgarh</option>
+					<option value="Dadra and Nagar Haveli">
+						Dadra and Nagar Haveli
+					</option>
+					<option value="Goa">Goa</option>
+					<option value="Gujarat">Gujarat</option>
+					<option value="Haryana">Haryana</option>
+					<option value="Himachal Pradesh">Himachal Pradesh</option>
+					<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+					<option value="Jharkhand">Jharkhand</option>
+					<option value="Karnataka">Karnataka</option>
+					<option value="Kerala">Kerala</option>
+					<option value="Madhya Pradesh">Madhya Pradesh</option>
+					<option value="Maharashtra">Maharashtra</option>
+					<option value="Manipur">Manipur</option>
+					<option value="Meghalaya">Meghalaya</option>
+					<option value="Mizoram">Mizoram</option>
+					<option value="Nagaland">Nagaland</option>
+					<option value="Odisha">Odisha</option>
+					<option value="Puducherry">Puducherry</option>
+					<option value="Punjab">Punjab</option>
+					<option value="Rajasthan">Rajasthan</option>
+					<option value="Sikkim">Sikkim</option>
+					<option value="Tamil Nadu">Tamil Nadu</option>
+					<option value="Telangana">Telangana</option>
+					<option value="Tripura">Tripura</option>
+					<option value="Uttar Pradesh">Uttar Pradesh</option>
+					<option value="Uttarakhand">Uttarakhand</option>
+					<option value="West Bengal">West Bengal</option>
 				</select>
 				<select name="seasons" id="seasons">
+					<option value="Kharif">Kharif</option>
+					<option value="Whole Year">Whole Year</option>
+					<option value="Autumn">Autumn</option>
+					<option value="Rabi">Rabi</option>
+					<option value="Summer">Summer</option>
+					<option value="Winter">Winter</option>
 				</select>
 				<button onClick={queryData} id="submit">
 					Submit
 				</button>
 				<p>
-					Suggested Crop: <br/><b id="suggested-crop"></b>
+					Suggested Crop: <br />
+					<b id="suggested-crop"></b>
 				</p>
 			</div>
 			<div className="wiki-main">
