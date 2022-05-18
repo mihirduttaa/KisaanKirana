@@ -1,21 +1,38 @@
-import React from 'react'
-import { Button } from './Button'
-import './HeroSection.css';
-import '../App.css';
+import React from "react";
+import "./HeroSection.css";
+import "../App.css";
 
 function HeroSection() {
-  return (
-    <div className='hero-container'>
-      {/* <video src="C:\Users\ASUS\kisaankirana\public\videos\video-2.mp4" autoPlay loop muted/> */}
-      <h1>Adventure AWAITS</h1>
-      <p>What are you waiting for?</p>
-      <div className='hero-btns'>
-          <Button className='btns' buttonStyle='btn--outline' buttonSize='btn--large'>
-              WATCH TRAILER <i className='far fa-play-circle'/>
-          </Button>
-      </div>
-    </div>
-  )
+	return (
+		<main>
+			<div className="hero-container">
+				<h1>KisaanKirana</h1>
+				<p>Where farmers are the priority!</p>
+			</div>
+			<div className="quote-container">
+				<p>
+					"The farmer is the only man in our economy who buys
+					everything at retail, sells everything at wholesale, and
+					pays the freight both ways."
+				</p>
+				<br />
+				<h6>
+					<i>John F. Kennedy</i>
+				</h6>
+			</div>
+			<div className="about-container">
+				<h1>About Us</h1>
+				<p>
+					<span>KisaanKirana</span> - <i>Farmer's most efficient companion.</i> <br/><br/> We are here
+					to help farmers to grow efficiently. Any farmer can input
+					the required detail and get to know the most favorable crop
+					according to the statistics. Also we provide the best
+					e-store from where farmers can purchase seeds in a very
+					pocket friendly price.
+				</p>
+			</div>
+		</main>
+	);
 }
 
-export default HeroSection
+export default HeroSection;
